@@ -10,7 +10,7 @@ const userRouter=require("./routes/user");
 const blogRouter=require("./routes/blog");
 const { checkforAuthenticationCookie } = require("./middlewares/auth");
 const app=express();
-const PORT=5000 ;
+const PORT= process.env.PORT || 8000;
 
 
 mongoose.connect(process.env.MONGO_URL).then(()=>{
