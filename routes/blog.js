@@ -3,20 +3,19 @@ const multer  = require('multer');
 const path=require("path");
 const Blog=require("../models/blog");
 const Comment=require("../models/comments");
-const { route } = require("./user");
 
 const router=Router();
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-      cb(null, `./public/uploads/`)
+      cb(null, path.resolve("./public/uploads/"));
     },
     filename: function (req, file, cb) {
     const filename=`${Date.now()}-${file.originalname}`;
     cb(null,filename);
-    }
+    },
   });
-  const upload = multer({ storage: storage })
+  const upload = multer({ storage: storage });
   
 router.get("/add-new",(req,res)=>{
     return res.render("addBlog",{user:req.user});

@@ -1,5 +1,6 @@
 require("dotenv").config();
 const path=require("path");
+const mongodb=require("mongodb");
 const express=require("express");
 const mongoose=require("mongoose");
 const bodyParser=require("body-parser");
@@ -9,7 +10,7 @@ const userRouter=require("./routes/user");
 const blogRouter=require("./routes/blog");
 const { checkforAuthenticationCookie } = require("./middlewares/auth");
 const app=express();
-const PORT=process.env.PORT ||5000 ;
+const PORT=5000 ;
 
 
 mongoose.connect(process.env.MONGO_URL).then(()=>{

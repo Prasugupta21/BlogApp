@@ -2,7 +2,10 @@ const {Schema,model}=require("mongoose");
 
 
 const commentSchema=new Schema({
-   
+    content:{
+        type:String,
+      required:true
+    },
     blogId:{
         type:Schema.Types.ObjectId,
         ref:"blog"
@@ -11,11 +14,8 @@ const commentSchema=new Schema({
     createdBy:{
         type:Schema.Types.ObjectId,
         ref:"user"
-    },
-    content:{
-        type:String,
-      required:true
-    },
+    }
+ 
 },{timestamps:true});
 
 const Comment=model('comment',commentSchema);
