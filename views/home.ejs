@@ -14,16 +14,21 @@
             <div class="col">
             <div class="card" style="width: 18rem;">
                 
-                <img src="<%= blog.coverImageURL %>" class="card-img-top" alt="..."  width="10rem">
+                <img src="<%= blog.coverImageURL %>" class="card-img-top" alt="..."  min-height="35rem">
                 <div class="card-body">
-                  <h5 class="card-title"><%= blog.title %> </h5>
-                  <a href="/blog/<%= blog._id %>" class="btn btn-primary">View</a>
+                  <h5 class="card-title text-center"><%= blog.title %> </h5>
+                  <a href="/blog/<%= blog._id %>" class="btn btn-primary" style="margin-left:6rem">View</a>
                 </div>
               </div>  
             </div>
       <%  }); %>
+
     </div>
+    
+      
+
 </div>
+
     <%- include("./partials/script") %>
 </body>
 </html>
